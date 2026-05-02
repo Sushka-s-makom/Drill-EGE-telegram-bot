@@ -1,0 +1,23 @@
+# Environment
+.env
+
+# Database files
+database/*.db
+database/*.db-shm
+database/*.db-wal
+
+# Generated card images
+cards/
+cards_solution/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# IDE
+.idea/
+.claude/
+
+# Project-internal docs
+CLAUDE.md
