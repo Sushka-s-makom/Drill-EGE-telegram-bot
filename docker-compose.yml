@@ -1,0 +1,13 @@
+services:
+  bot:
+    build: .
+    container_name: ege-physics-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./database:/app/database
+      - ./cards:/app/cards
+      - ./cards_solution:/app/cards_solution
+    command: ["python", "bot.py"]
+
