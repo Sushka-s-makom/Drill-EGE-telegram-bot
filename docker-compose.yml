@@ -5,9 +5,17 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
     volumes:
-      - ./database:/app/database
-      - ./cards:/app/cards
-      - ./cards_solution:/app/cards_solution
+      - ${BOT_DB_PATH_HOST}:/app/database/bot.db
+      - ${PHYSICS_DB_PATH_HOST}:/app/database/physics.db:ro
+      - ${MATH_DB_PATH_HOST}:/app/database/math.db:ro
+      - ${CARDS_DIR_HOST}:/app/cards:ro
+      - ${CARDS_SOL_DIR_HOST}:/app/cards_solution:ro
     command: ["python", "bot.py"]
-
