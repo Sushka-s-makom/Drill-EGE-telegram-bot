@@ -134,18 +134,26 @@ flowchart LR
 
 ```text
 .
-├── bot.py                  # точка входа
-├── config.py               # загрузка .env и пути
-├── db.py                   # работа с SQLite
-├── handlers/               # Telegram-хендлеры
-├── keyboards.py            # inline-клавиатуры
-├── states.py               # FSM-состояния
+├── app/
+│   ├── bot.py              # точка входа в приложение
+│   ├── config.py           # загрузка .env и пути
+│   ├── db.py               # работа с SQLite
+│   ├── keyboards.py        # inline-клавиатуры
+│   ├── states.py           # FSM-состояния
+│   └── handlers/           # Telegram-хендлеры
 ├── database/               # bot.db, physics.db и math.db
 ├── cards/                  # PNG-карточки заданий
 ├── cards_solution/         # PNG-карточки решений
-├── classify_questions.py   # классификация заданий по темам/номерам ЕГЭ
-├── pregenerate_cards.py    # предгенерация карточек
-└── migrate_video_links.py  # миграция ссылок на видео
+├── docs/
+│   ├── screenshots/        # скриншоты для README
+│   └── sources/            # PDF-материалы и спецификации
+├── scripts/
+│   ├── card_builder.py
+│   ├── classify_questions.py
+│   ├── fix_written_task_types.py
+│   ├── migrate_video_links.py
+│   └── pregenerate_cards.py
+└── README.md
 ```
 
 ## Запуск через Docker Compose

@@ -18,4 +18,4 @@ services:
       - ${MATH_DB_PATH_HOST}:/app/database/math.db:ro
       - ${CARDS_DIR_HOST}:/app/cards:ro
       - ${CARDS_SOL_DIR_HOST}:/app/cards_solution:ro
-    command: ["python", "bot.py"]
+    command: ["python", "-m", "app.bot"]

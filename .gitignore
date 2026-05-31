@@ -20,5 +20,3 @@ __pycache__/
 .claude/
 .DS_Store
 
-# Project-internal docs
-CLAUDE.md
